@@ -1,41 +1,23 @@
-service: messagine-bot
+service: bottender
 app: messagine
 org: suphero
-
-frameworkVersion: '2'
-
-plugins:
-  - serverless-plugin-typescript
-
 provider:
   name: aws
   runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
-
-package:
-  include:
-    - src/locales/**
-
+  stage: dev
+  region: us-east-1
+  memorySize: 128
 functions:
-  status:
-    handler: src/handler.statusHandler
+  app:
+    handler: server.handler
     events:
-      - httpApi:
+      - http:
           path: /
-          method: get
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
     environment:
-      BOT_TOKEN: ${param:BOT_TOKEN}
-      ENDPOINT_URL: ${param:ENDPOINT_URL}
-      MIXPANEL_TOKEN: ${param:MIXPANEL_TOKEN}
-      WEBHOOK_PATH: 'api'
-  webhook:
-    handler: src/handler.webhookHandler
-    events:
-      - httpApi:
-          path: /api
-          method: post
-    environment:
-      BOT_TOKEN: ${param:BOT_TOKEN}
-      DB_URL: ${param:DB_URL}
-      ENDPOINT_URL: ${param:ENDPOINT_URL}
-      MIXPANEL_TOKEN: ${param:MIXPANEL_TOKEN}
+      TELEGRAM_ACCESS_TOKEN: ${param:TELEGRAM_ACCESS_TOKEN}
