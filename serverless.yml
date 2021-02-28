@@ -1,4 +1,4 @@
-service: bottender-aws
+service: bottender
 app: messagine
 org: suphero
 
