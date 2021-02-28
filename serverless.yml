@@ -20,3 +20,5 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+    environment:
+      TELEGRAM_ACCESS_TOKEN: ${param:TELEGRAM_ACCESS_TOKEN}
