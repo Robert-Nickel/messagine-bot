@@ -12,13 +12,16 @@ functions:
   app:
     handler: server.handler
     events:
-      - http:
-          path: /
-          method: ANY
-          cors: true
-      - http:
-          path: /{proxy+}
-          method: ANY
-          cors: true
+      - httpApi:
+          path: /webhook/telegram
+          method: post
+      - httpApi:
+          path: /webhook/messenger
+          method: post
     environment:
+      MESSENGER_PAGE_ID: ${param:MESSENGER_PAGE_ID}
+      MESSENGER_ACCESS_TOKEN: ${param:MESSENGER_ACCESS_TOKEN}
+      MESSENGER_VERIFY_TOKEN: ${param:MESSENGER_VERIFY_TOKEN}
+      MESSENGER_APP_ID: ${param:MESSENGER_APP_ID}
+      MESSENGER_APP_SECRET: ${param:MESSENGER_APP_SECRET}
       TELEGRAM_ACCESS_TOKEN: ${param:TELEGRAM_ACCESS_TOKEN}
