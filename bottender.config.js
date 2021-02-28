@@ -1,7 +1,7 @@
 module.exports = {
   channels: {
     messenger: {
-      enabled: true,
+      enabled: false,
       sync: true,
       path: '/webhooks/messenger',
       pageId: process.env.MESSENGER_PAGE_ID,
@@ -17,7 +17,7 @@ module.exports = {
       channelSecret: process.env.LINE_CHANNEL_SECRET,
     },
     telegram: {
-      enabled: false,
+      enabled: true,
       path: '/webhooks/telegram',
       accessToken: process.env.TELEGRAM_ACCESS_TOKEN,
     },
