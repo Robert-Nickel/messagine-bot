@@ -1,18 +1,18 @@
 module.exports = {
-  session: {
-    driver: 'mongo',
-    stores: {
-      mongo: {
-        url: process.env.DB_URL,
-        collectionName: 'sessions',
-      },
-    },
-  },
+  // session: {
+  //   driver: 'mongo',
+  //   stores: {
+  //     mongo: {
+  //       url: process.env.DB_URL,
+  //       collectionName: 'sessions',
+  //     },
+  //   },
+  // },
   initialState: {},
   channels: {
     messenger: {
       enabled: true,
-      sync: true,
+      // sync: true,
       path: '/webhooks/messenger',
       pageId: process.env.MESSENGER_PAGE_ID,
       accessToken: process.env.MESSENGER_ACCESS_TOKEN,
@@ -29,7 +29,7 @@ module.exports = {
     },
     telegram: {
       enabled: true,
-      sync: true,
+      // sync: true,
       path: '/webhooks/telegram',
       accessToken: process.env.TELEGRAM_ACCESS_TOKEN,
     },
