@@ -14,13 +14,16 @@ functions:
     events:
       - httpApi:
           path: /
-          method: post
+          method: '*'
       - httpApi:
-          path: /webhook/telegram
-          method: post
-      - httpApi:
-          path: /webhook/messenger
-          method: post
+          path: /{proxy+}
+          method: '*'
+      # - httpApi:
+      #     path: /webhook/telegram
+      #     method: post
+      # - httpApi:
+      #     path: /webhook/messenger
+      #     method: post
       # - http:
       #     path: /
       #     method: ANY
