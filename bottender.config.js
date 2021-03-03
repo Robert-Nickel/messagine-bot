@@ -8,7 +8,7 @@ module.exports = {
   //     },
   //   },
   // },
-  initialState: {},
+  // initialState: {},
   channels: {
     messenger: {
       enabled: true,
