@@ -12,26 +12,26 @@ functions:
   app:
     handler: server.handler
     events:
-      - httpApi:
-          path: /
-          method: '*'
-      - httpApi:
-          path: /{proxy+}
-          method: '*'
       # - httpApi:
-      #     path: /webhook/telegram
-      #     method: post
+      #     path: /
+      #     method: '*'
       # - httpApi:
-      #     path: /webhook/messenger
-      #     method: post
-      - http:
-          path: /
-          method: ANY
-          cors: true
-      - http:
-          path: /{proxy+}
-          method: ANY
-          cors: true
+      #     path: /{proxy+}
+      #     method: '*'
+      - httpApi:
+          path: /webhook/telegram
+          method: post
+      - httpApi:
+          path: /webhook/messenger
+          method: post
+      # - http:
+      #     path: /
+      #     method: ANY
+      #     cors: true
+      # - http:
+      #     path: /{proxy+}
+      #     method: ANY
+      #     cors: true
     environment:
       MESSENGER_PAGE_ID: ${param:MESSENGER_PAGE_ID}
       MESSENGER_ACCESS_TOKEN: ${param:MESSENGER_ACCESS_TOKEN}
