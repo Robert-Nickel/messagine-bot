@@ -1,19 +1,7 @@
 module.exports = {
   session: {
-    driver: 'memory',
+    driver: 'mongo',
     stores: {
-      memory: {
-        maxSize: 500,
-      },
-      file: {
-        dirname: '.sessions',
-      },
-      redis: {
-        port: 6379,
-        host: '127.0.0.1',
-        password: 'auth',
-        db: 0,
-      },
       mongo: {
         url: process.env.DB_URL,
         collectionName: 'sessions',
