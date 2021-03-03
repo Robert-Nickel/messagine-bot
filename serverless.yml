@@ -15,12 +15,15 @@ functions:
       - httpApi:
           path: /webhooks/telegram
           method: post
+          metrics: true
       - httpApi:
           path: /webhooks/messenger
           method: post
+          metrics: true
       - httpApi:
           path: /webhooks/messenger
           method: get
+          metrics: true
     environment:
       MESSENGER_PAGE_ID: ${param:MESSENGER_PAGE_ID}
       MESSENGER_ACCESS_TOKEN: ${param:MESSENGER_ACCESS_TOKEN}
