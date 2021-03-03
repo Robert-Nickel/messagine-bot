@@ -22,6 +22,7 @@ server.use(
 
 server.all('*', (req, res) => {
   app.prepare().then(() => {
+    console.log(req);
     return handle(req, res);
   });
 });
