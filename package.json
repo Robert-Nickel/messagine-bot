@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "bottender dev",
+    "dev-server": "nodemon server.js",
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
