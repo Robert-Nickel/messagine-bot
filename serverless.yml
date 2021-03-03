@@ -27,6 +27,7 @@ functions:
           path: /webhooks/messenger
           method: get
     environment:
+      DB_URL: ${param:DB_URL}
       MESSENGER_PAGE_ID: ${param:MESSENGER_PAGE_ID}
       MESSENGER_ACCESS_TOKEN: ${param:MESSENGER_ACCESS_TOKEN}
       MESSENGER_VERIFY_TOKEN: ${param:MESSENGER_VERIFY_TOKEN}
