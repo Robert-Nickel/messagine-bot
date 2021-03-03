@@ -19,10 +19,10 @@ functions:
       #     path: /{proxy+}
       #     method: '*'
       - httpApi:
-          path: /webhook/telegram
+          path: /webhooks/telegram
           method: post
       - httpApi:
-          path: /webhook/messenger
+          path: /webhooks/messenger
           method: post
       # - http:
       #     path: /
