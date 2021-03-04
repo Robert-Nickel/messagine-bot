@@ -12,23 +12,27 @@ module.exports = {
     },
     line: {
       enabled: false,
+      sync: true,
       path: '/webhooks/line',
       accessToken: process.env.LINE_ACCESS_TOKEN,
       channelSecret: process.env.LINE_CHANNEL_SECRET,
     },
     telegram: {
       enabled: true,
+      sync: true,
       path: '/webhooks/telegram',
       accessToken: process.env.TELEGRAM_ACCESS_TOKEN,
     },
     slack: {
       enabled: false,
+      sync: true,
       path: '/webhooks/slack',
       accessToken: process.env.SLACK_ACCESS_TOKEN,
       verificationToken: process.env.SLACK_VERIFICATION_TOKEN,
     },
     viber: {
       enabled: false,
+      sync: true,
       path: '/webhooks/viber',
       accessToken: process.env.VIBER_ACCESS_TOKEN,
       sender: {
