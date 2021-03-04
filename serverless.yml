@@ -2,8 +2,8 @@ service: bottender
 app: messagine
 org: suphero
 
-plugins:
-  - serverless-plugin-typescript
+# plugins:
+#   - serverless-plugin-typescript
 
 provider:
   name: aws
