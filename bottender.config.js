@@ -1,14 +1,14 @@
 module.exports = {
-  session: {
-    driver: 'mongo',
-    stores: {
-      mongo: {
-        url: process.env.MONGO_URL,
-        collectionName: 'sessions',
-      },
-    },
-  },
-  initialState: {},
+  // session: {
+  //   driver: 'mongo',
+  //   stores: {
+  //     mongo: {
+  //       url: process.env.MONGO_URL,
+  //       collectionName: 'sessions',
+  //     },
+  //   },
+  // },
+  // initialState: {},
   channels: {
     messenger: {
       enabled: true,
