@@ -3,6 +3,6 @@ const { app } = require("./app");
 
 const server = serverlessExpress.createServer(app);
 
-export const handle = (event, context) => {
+module.exports.handle = (event, context) => {
   serverlessExpress.proxy(server, event, context);
 };

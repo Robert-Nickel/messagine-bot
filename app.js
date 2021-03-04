@@ -33,4 +33,6 @@ server.listen(port, err => {
   console.log(`> Ready on http://localhost:${port}`);
 });
 
-export { app };
+module.exports = {
+  app
+}
