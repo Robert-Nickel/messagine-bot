@@ -1,5 +1,5 @@
-import serverless from 'serverless-http';
-import { bottender, initializeServer } from 'bottender';
+const serverless = require('serverless-http');
+const { bottender, initializeServer } = require('bottender');
 
 await runServer();
 
