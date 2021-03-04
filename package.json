@@ -2,7 +2,10 @@
   "scripts": {
     "dev": "bottender dev",
     "dev-server": "nodemon server.js",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "webhook": "npm run webhook:messenger && npm run webhook:telegram",
+    "webhook:messenger": "npx bottender messenger webhook set",
+    "webhook:telegram": "npx bottender telegram webhook set"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
