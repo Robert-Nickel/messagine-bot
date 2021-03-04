@@ -15,7 +15,7 @@ provider:
     metrics: true
 functions:
   app:
-    handler: server.handler
+    handler: handler.handle
     events:
       - httpApi:
           path: /webhooks/telegram
