@@ -1,4 +1,4 @@
 import serverless from 'serverless-http';
-import { server } from "./src/server";
+import { server } from "./server";
 
 module.exports.handle = serverless(server);
