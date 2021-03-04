@@ -1,3 +1,7 @@
 module.exports = async function App(context) {
-  await context.sendText('Selam Dünya');
+  if (context.event.isText) {
+    await context.sendText(context.event.text);
+  } else {
+    await context.sendText('Not text input');
+  }
 };
