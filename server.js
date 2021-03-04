@@ -34,5 +34,5 @@ server.listen(port, err => {
 });
 
 module.exports = {
-  app
+  server
 }

@@ -1,8 +1,8 @@
 const serverlessExpress = require('aws-serverless-express');
-const { app } = require("./app");
+const { server } = require("./server");
 
-const server = serverlessExpress.createServer(app);
+const expressServer = serverlessExpress.createServer(server);
 
 module.exports.handle = (event, context) => {
-  serverlessExpress.proxy(server, event, context);
+  serverlessExpress.proxy(expressServer, event, context);
 };
