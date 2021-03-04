@@ -9,10 +9,8 @@
     "webhook:whatsapp": "npx bottender whatsapp webhook set"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
     "bottender": "latest",
     "cross-env": "^6.0.3",
-    "express": "^4.17.1",
     "serverless-http": "^2.3.0"
   },
   "devDependencies": {
