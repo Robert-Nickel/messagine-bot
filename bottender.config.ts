@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   channels: {
     messenger: {
       enabled: true,
