@@ -5,6 +5,10 @@ org: suphero
 plugins:
   - serverless-plugin-typescript
 
+package:
+  include:
+    - bottender.config.js
+
 provider:
   name: aws
   runtime: nodejs12.x
