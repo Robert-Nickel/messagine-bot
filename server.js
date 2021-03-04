@@ -1,6 +1,6 @@
-import bodyParser from 'body-parser';
-import express from 'express';
-import { bottender } from 'bottender';
+const bodyParser = require('body-parser');
+const express = require('express');
+const { bottender } = require('bottender');
 
 const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
@@ -14,7 +14,7 @@ const server = express();
 server.use(
   bodyParser.json({
     verify: (req, _, buf) => {
-      (req as any).rawBody = buf.toString();
+      req.rawBody = buf.toString();
     },
   })
 );
@@ -29,6 +29,4 @@ server.listen(port, () => {
   console.log(`> Ready on http://localhost:${port}`);
 });
 
-export {
-  server
-}
+module.exports = { server };
