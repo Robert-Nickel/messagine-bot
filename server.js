@@ -1,32 +1,12 @@
-const bodyParser = require('body-parser');
-const express = require('express');
-const { bottender } = require('bottender');
-
-const app = bottender({
-  dev: process.env.NODE_ENV !== 'production',
-});
+const { initializeServer } = require('bottender');
 
 const port = Number(process.env.PORT) || 5000;
+const server = initializeServer();
 
-const handle = app.getRequestHandler();
-
-const server = express();
-server.use(
-  bodyParser.json({
-    verify: (req, _, buf) => {
-      req.rawBody = buf.toString();
-    },
-  })
-);
-
-server.all('*', (req, res) => {
-  app.prepare().then(() => {
-    return handle(req, res);
+if (server) {
+  server.listen(port, () => {
+    console.log(`server is running on ${port} port...`);
   });
-});
-
-server.listen(port, () => {
-  console.log(`> Ready on http://localhost:${port}`);
-});
+}
 
 module.exports = { server };
